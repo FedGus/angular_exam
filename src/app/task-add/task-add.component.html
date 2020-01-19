@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Добавить заметку</h1>
+    <form [formGroup]="taskForm">
+    <div class="row">
+        <div class="col-12">
+            <label for="">Задача</label>
+            <textarea class="form-control" placeholder="Введите текст задачи" formControlName="description" #inputDescription row="3"></textarea>
+        </div>
+         <!--<div class="col-12 mt-2">
+            <input type="checkbox" class="form-check-input" placeholder="Дата начала" formControlName="datecreate" #inputStatus>
+        </div> -->
+        <div class="col-12 mt-2">
+            <label for="">Дата выполнения</label>
+            <input type="date" class="form-control" placeholder="Дата окончания" formControlName="datecomplete" #inputDateComplete>
+        </div>
+        <div class="col-12 mt-2">
+            <button class="btn btn-primary" (click)="doPost(inputDescription, inputDateComplete)" [disabled]="taskForm.invalid">Сохранить</button>
+           </div>
+    </div>
+</form>
+</div>
+

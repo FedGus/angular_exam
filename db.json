@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    {
+      "description": "Заехать к бабушке",
+      "status": false,
+      "datecomplete": "2020-01-17",
+      "id": 1
+    },
+    {
+      "description": "Позвонить маме",
+      "status": true,
+      "datecomplete": "2020-01-17",
+      "id": 2
+    },
+    {
+      "description": "Доделать презентацию в понедельник",
+      "status": true,
+      "datecomplete": "2020-01-15",
+      "id": 4
+    },
+    {
+      "description": "Выключить утюг",
+      "status": false,
+      "datecomplete": "2020-01-17",
+      "id": 7
+    },
+    {
+      "description": "Составить отчет к понедельнику",
+      "status": false,
+      "datecomplete": "2020-01-27",
+      "id": 8
+    },
+    {
+      "description": "Проверить, не прокисло ли молоко",
+      "status": false,
+      "datecomplete": "2020-01-19",
+      "id": 9
+    }
+  ]
+}

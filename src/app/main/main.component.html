@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row mt-3">
+      <div class="col-5">
+        <h2>Фильтр</h2>
+      </div>
+      <div class="col-6">
+        <h2>Сортировка</h2>
+      </div>
+    </div>
+    <div class="row mt-2 mb-1 ">
+      <div class="col-2">
+        <p>Искать по содержанию</p>
+      </div>
+      <div class="col-3">
+        <input type="text" [(ngModel)]="search_content" class="form-control">
+      </div>
+
+      <div class="col-2">
+        <p>Показать только</p>
+      </div>
+      <div class="col-3">
+        <select class="form-control" [(ngModel)]="filter_status" class="form-control">
+          <option value="0" selected>все</option>
+          <option value="1">выполненные</option>
+          <option value="2">не выполненные</option>
+          <option value="3">просроченные</option>
+        </select>
+      </div>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <app-task-view (deletetask)="doDelete($event)" [inTask]="task" *ngFor="let task of tasks | filter:search_content | sort:filter_status" ></app-task-view>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="m-2 col-12">
+        <div class="card">
+            <div class="card card-header" [ngClass]="{'bg-white': inTask.status === true }">
+                <h5 [ngClass]="{'text-black-50': inTask.status === true }">Дело {{inTask.id}}</h5>
+            </div>
+            <div class="card card-body" [ngClass]="{'bg-danger': inTask.datecomplete < formatdate && inTask.status === false}">
+                <div *ngIf=!isEdit>
+                    <div [ngClass]="{'text-black-50': inTask.status === true }">{{inTask.description.split(" ")[0]}} {{inTask.description.split(" ")[1]}}...</div>
+                    <div [ngClass]="{'text-black-50': inTask.status === true }">До: {{inTask.datecomplete| date: 'dd.MM.yyyy'}}</div>
+                    <button class="btn btn-primary m-2" (click)="showEdit()">Edit</button>
+                    <button class="btn btn-danger m-2" (click)="doDelete(inTask.id)">Delete</button>
+                </div>
+                <div class="row" *ngIf=isEdit>
+                    <div class="ml-2">
+                        <div class="form-group">
+                            <label for="">Задача</label>
+                            <textarea type="text" class="form-control" placeholder="Текст" [(ngModel)]="inTask.description" #inDescription rows="3"> </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Дата выполнения</label>
+                            <input type="date" class="form-control" placeholder="Дата" [(ngModel)]="inTask.datecomplete" #inDateComplete>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" [(ngModel)]="inTask.status" #inStatus id="check">
+                            <label class="form-check-label" for="check">Выполнено</label>
+                        </div>
+                        <button class="btn btn-primary m-2" (click)="doPut(inTask.id, inDescription.value, inStatus.checked, inDateComplete.value)">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
